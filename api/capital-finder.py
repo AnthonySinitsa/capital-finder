@@ -14,10 +14,10 @@ class handler(BaseHTTPRequestHandler):
     self.end_headers()
     
     country = dic['country']
-    url = "https://restcountries.com/v3.1/all"
+    url = "https://restcountries.com/v3.1/name/"
     response = requests.get(url + country)
     data = response.json()
-    
+    capital = data[0]['capital'][0]
     
     
     # definitions = []
@@ -25,6 +25,6 @@ class handler(BaseHTTPRequestHandler):
     #   definition = word_data['meanings'][0]['definitions'][0]['definition']
     #   definitions.append(definition)
     
-    message = str(definitions)
+    message = str(capital)
     self.wfile.write(message.encode())
     return
