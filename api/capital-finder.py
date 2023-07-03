@@ -14,13 +14,19 @@ class handler(BaseHTTPRequestHandler):
     self.end_headers()
     
     country = dic['country']
+    capital = dic['capital']
     url = "https://restcountries.com/v3.1/name/"
-    response = requests.get(url + country)
-    data = response.json()
-    capital = data[0]['capital'][0]
-    message = str(f'The capital of {country} is {capital}')
-    #q: what is line 20 doing?
-    #a: it is getting the capital of the country that the user inputted
+    country_response = requests.get(url + country)
+    capital_response = requests.get(url + capital)
+    
+    country_data = country_response.json()
+    capital_data = capital_response.json()
+    
+    capital_message = country_data[0]['capital'][0]
+    output_capital = str(f'The capital of {country} is {capital_message}')
+    country_message = capital_data[0]['name']['common']
+    output_country = str(f'{capital} is the capital of {country_message}')
+
     
     
     # definitions = []
@@ -28,6 +34,7 @@ class handler(BaseHTTPRequestHandler):
     #   definition = word_data['meanings'][0]['definitions'][0]['definition']
     #   definitions.append(definition)
     
-    message = str(message)
+    message = str(output_capital)
+    message = str(output_country)
     self.wfile.write(message.encode())
     return
