@@ -18,6 +18,9 @@ class handler(BaseHTTPRequestHandler):
     response = requests.get(url + country)
     data = response.json()
     capital = data[0]['capital'][0]
+    message = str(f'The capital of {country} is {capital}')
+    #q: what is line 20 doing?
+    #a: it is getting the capital of the country that the user inputted
     
     
     # definitions = []
@@ -25,6 +28,6 @@ class handler(BaseHTTPRequestHandler):
     #   definition = word_data['meanings'][0]['definitions'][0]['definition']
     #   definitions.append(definition)
     
-    message = str(capital)
+    message = str(message)
     self.wfile.write(message.encode())
     return
