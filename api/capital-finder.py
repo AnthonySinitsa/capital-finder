@@ -24,7 +24,7 @@ class handler(BaseHTTPRequestHandler):
     
     # capital_message = country_data[0]['capital'][0]
     # output_capital = str(f'The capital of {country} is {capital_message}')
-    country_message = capital_data[0]['name']['common']
+    country_message = capital_data[0]['name'][0]['common']
     output_country = str(f'{capital} is the capital of {country_message}')
 
     
