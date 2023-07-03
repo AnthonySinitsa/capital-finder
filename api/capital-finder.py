@@ -30,7 +30,7 @@ class handler(BaseHTTPRequestHandler):
       url = "https://restcountries.com/v3.1/capital/"
       capital_response = requests.get(url + capital)
       capital_data = capital_response.json()
-      country_message = capital_data[0]['name'][0]['common']
+      country_message = capital_data[0]['name']['common']
       output_country = str(f'{capital} is the capital of {country_message}')
       countryMessage = str(output_country)
       self.wfile.write(countryMessage.encode())
