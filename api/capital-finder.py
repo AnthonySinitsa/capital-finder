@@ -34,8 +34,8 @@ class handler(BaseHTTPRequestHandler):
     #   definition = word_data['meanings'][0]['definitions'][0]['definition']
     #   definitions.append(definition)
     
-    message = str(output_capital)
-    message2 = str(output_country)
-    self.wfile.write(message.encode())
-    self.wfile.write(message2.encode())
+    capitalMessage = str(output_capital)
+    countryMessage = str(output_country)
+    self.wfile.write(capitalMessage.encode())
+    self.wfile.write(countryMessage.encode())
     return
