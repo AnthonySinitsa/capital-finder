@@ -1,6 +1,6 @@
 from http.server import BaseHTTPRequestHandler
-from datetime import datetime
-from urllib import parse, requests
+# from datetime import datetime
+# from urllib import parse, requests
 
 # class handler(BaseHTTPRequestHandler):
 #   def do_GET(self):
