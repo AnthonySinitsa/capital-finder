@@ -13,17 +13,17 @@ class handler(BaseHTTPRequestHandler):
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
     
-    country = dic['country']
+    # country = dic['country']
     capital = dic['capital']
     url = "https://restcountries.com/v3.1/name/"
-    country_response = requests.get(url + country)
+    # country_response = requests.get(url + country)
     capital_response = requests.get(url + capital)
     
-    country_data = country_response.json()
+    # country_data = country_response.json()
     capital_data = capital_response.json()
     
-    capital_message = country_data[0]['capital'][0]
-    output_capital = str(f'The capital of {country} is {capital_message}')
+    # capital_message = country_data[0]['capital'][0]
+    # output_capital = str(f'The capital of {country} is {capital_message}')
     country_message = capital_data[0]['name']['common']
     output_country = str(f'{capital} is the capital of {country_message}')
 
@@ -34,8 +34,8 @@ class handler(BaseHTTPRequestHandler):
     #   definition = word_data['meanings'][0]['definitions'][0]['definition']
     #   definitions.append(definition)
     
-    capitalMessage = str(output_capital)
+    # capitalMessage = str(output_capital)
     countryMessage = str(output_country)
-    self.wfile.write(capitalMessage.encode())
+    # self.wfile.write(capitalMessage.encode())
     self.wfile.write(countryMessage.encode())
     return
