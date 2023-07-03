@@ -29,11 +29,7 @@ class handler(BaseHTTPRequestHandler):
 
     
     
-    # definitions = []
-    # for word_data in data:
-    #   definition = word_data['meanings'][0]['definitions'][0]['definition']
-    #   definitions.append(definition)
-    
+
     # capitalMessage = str(output_capital)
     countryMessage = str(output_country)
     # self.wfile.write(capitalMessage.encode())
