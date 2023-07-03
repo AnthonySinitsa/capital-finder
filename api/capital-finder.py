@@ -35,6 +35,7 @@ class handler(BaseHTTPRequestHandler):
     #   definitions.append(definition)
     
     message = str(output_capital)
-    message = str(output_country)
+    message2 = str(output_country)
     self.wfile.write(message.encode())
+    self.wfile.write(message2.encode())
     return
